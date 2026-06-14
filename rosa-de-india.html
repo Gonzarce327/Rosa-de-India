@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rosa de India · Herbolario Natural · Villanueva de la Cañada</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #0A1A0C;
+    --forest: #1B3D24;
+    --sage: #3D6E52;
+    --leaf: #7AAE8A;
+    --gold: #C49830;
+    --gold-pale: #DDB86A;
+    --rose: #B8697A;
+    --rose-pale: #D49AA7;
+    --cream: #F5F0E6;
+    --white: #FCFAF6;
+    --ink: #1A1A17;
+    --muted: #5A5A55;
+    --light-text: #F8F5EE;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 200;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 56px; height: 64px;
+    background: rgba(10, 26, 12, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(196, 152, 48, 0.18);
+    transition: background 0.4s;
+  }
+  nav.solid { background: rgba(10, 26, 12, 0.98); }
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 400;
+    color: var(--light-text); letter-spacing: 0.08em;
+  }
+  .nav-brand em { font-style: italic; color: var(--gold-pale); }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    color: rgba(248,245,238,0.6);
+    text-decoration: none; font-size: 0.7rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 500; transition: color 0.25s;
+  }
+  .nav-links a:hover { color: var(--gold-pale); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: var(--night);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 120px 24px 100px;
+    position: relative; overflow: hidden;
+  }
+  .hero-glow {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 55% 55% at 50% 42%,
+      rgba(61, 110, 82, 0.14) 0%, transparent 72%);
+  }
+  .hero-rose {
+    width: 200px; height: 200px; margin-bottom: 44px;
+    animation: sway 7s ease-in-out infinite;
+    position: relative; z-index: 1;
+  }
+  @keyframes sway {
+    0%, 100% { transform: translateY(0) rotate(-0.5deg); }
+    50% { transform: translateY(-10px) rotate(0.5deg); }
+  }
+  .hero-eyebrow {
+    font-size: 0.68rem; letter-spacing: 0.32em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 18px; font-weight: 600;
+    position: relative; z-index: 1;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 10vw, 7.5rem);
+    font-weight: 300; line-height: 0.92;
+    color: var(--light-text); letter-spacing: -0.01em;
+    margin-bottom: 6px; position: relative; z-index: 1;
+  }
+  .hero h1 em { font-style: italic; color: var(--rose-pale); }
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.55rem);
+    font-style: italic; font-weight: 300;
+    color: rgba(248,245,238,0.45);
+    margin-bottom: 52px; letter-spacing: 0.04em;
+    position: relative; z-index: 1;
+  }
+  .btn-outline {
+    display: inline-block;
+    padding: 13px 38px;
+    border: 1px solid rgba(196,152,48,0.55);
+    color: var(--gold-pale); text-decoration: none;
+    font-size: 0.72rem; letter-spacing: 0.22em;
+    text-transform: uppercase; font-weight: 600;
+    transition: all 0.3s; position: relative; z-index: 1;
+  }
+  .btn-outline:hover {
+    background: var(--gold); color: var(--night);
+    border-color: var(--gold);
+  }
+  .hero-arrow {
+    position: absolute; bottom: 36px; left: 50%;
+    transform: translateX(-50%); z-index: 1;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+  }
+  .arrow-stem {
+    width: 1px; height: 44px;
+    background: linear-gradient(to bottom, rgba(196,152,48,0.6), transparent);
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:0.3;} 50%{opacity:1;} }
+
+  /* ─── PULL QUOTE ─── */
+  .pull-quote {
+    background: var(--forest);
+    padding: 52px 24px; text-align: center;
+  }
+  .pull-quote blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.25rem, 3vw, 1.9rem);
+    font-weight: 300; font-style: italic;
+    color: var(--light-text); max-width: 640px;
+    margin: 0 auto; line-height: 1.55;
+  }
+  .pull-quote cite {
+    display: block; margin-top: 18px;
+    font-size: 0.68rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--gold);
+    font-style: normal; font-weight: 600;
+    font-family: 'Jost', sans-serif;
+  }
+
+  /* ─── SECTION ANATOMY ─── */
+  section { padding: 100px 24px; }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  .eyebrow {
+    font-size: 0.68rem; letter-spacing: 0.28em;
+    text-transform: uppercase; color: var(--sage);
+    font-weight: 600; margin-bottom: 14px;
+  }
+  .section-h {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--forest); margin-bottom: 28px;
+  }
+  .section-h em { font-style: italic; }
+
+  /* ─── ABOUT ─── */
+  .about { background: var(--white); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: start;
+  }
+  .about-body p {
+    color: var(--muted); line-height: 1.85;
+    font-size: 0.92rem; font-weight: 300;
+    margin-bottom: 18px;
+  }
+  .about-body strong { color: var(--forest); font-weight: 600; }
+  .stats { display: flex; flex-direction: column; gap: 18px; margin-top: 8px; }
+  .stat {
+    padding: 22px 26px;
+    border-left: 2px solid var(--gold);
+    background: var(--cream);
+  }
+  .stat-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem; font-weight: 300;
+    color: var(--forest); line-height: 1;
+  }
+  .stat-l {
+    font-size: 0.76rem; color: var(--muted);
+    letter-spacing: 0.04em; margin-top: 6px; font-weight: 300;
+  }
+
+  /* ─── BANNER ─── */
+  .banner {
+    padding: 52px 24px; text-align: center;
+    background: linear-gradient(135deg, var(--sage) 0%, var(--forest) 100%);
+  }
+  .banner-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-style: italic; font-weight: 300;
+    color: var(--light-text); max-width: 680px;
+    margin: 0 auto 8px; line-height: 1.45;
+  }
+  .banner-sub {
+    font-size: 0.72rem; color: rgba(248,245,238,0.55);
+    letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500;
+  }
+
+  /* ─── PRODUCTS ─── */
+  .products { background: var(--cream); }
+  .products-head { text-align: center; max-width: 520px; margin: 0 auto 60px; }
+  .grid-3 {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 3px;
+  }
+  .pcard {
+    background: var(--white); padding: 38px 30px;
+    transition: background 0.3s;
+    cursor: default; position: relative; overflow: hidden;
+  }
+  .pcard::before {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 100%; height: 2px; background: var(--gold);
+    transform: scaleX(0) translateX(-50%);
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+    transform-origin: left;
+  }
+  .pcard:hover { background: var(--forest); }
+  .pcard:hover::before { transform: scaleX(1) translateX(0); }
+  .pcard:hover .pcard-icon { filter: brightness(10); }
+  .pcard:hover .pcard-title { color: var(--light-text); }
+  .pcard:hover .pcard-body { color: rgba(248,245,238,0.55); }
+  .pcard-icon {
+    font-size: 1.8rem; margin-bottom: 18px; display: block;
+    transition: filter 0.3s;
+  }
+  .pcard-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 400;
+    color: var(--forest); margin-bottom: 10px;
+    transition: color 0.3s;
+  }
+  .pcard-body {
+    font-size: 0.82rem; color: var(--muted);
+    line-height: 1.7; font-weight: 300;
+    transition: color 0.3s;
+  }
+
+  /* ─── REVIEWS ─── */
+  .reviews { background: var(--night); }
+  .reviews .eyebrow { color: var(--gold); }
+  .reviews .section-h { color: var(--light-text); }
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 2px; margin-top: 52px;
+  }
+  .rcard {
+    padding: 34px 28px;
+    background: rgba(255,255,255,0.04);
+    border-top: 1px solid rgba(196,152,48,0.18);
+    transition: background 0.3s;
+  }
+  .rcard:hover { background: rgba(255,255,255,0.07); }
+  .stars { color: var(--gold); font-size: 0.78rem; letter-spacing: 3px; margin-bottom: 16px; }
+  .rtext {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.02rem; font-weight: 300; font-style: italic;
+    line-height: 1.65; color: rgba(248,245,238,0.82);
+    margin-bottom: 20px;
+  }
+  .rauthor {
+    font-size: 0.68rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); font-weight: 600;
+  }
+
+  /* ─── HORARIO + CONTACTO ─── */
+  .info { background: var(--cream); }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .hours-table { width: 100%; border-collapse: collapse; margin-top: 28px; }
+  .hours-table tr { border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .hours-table td { padding: 13px 0; font-size: 0.86rem; font-weight: 300; color: var(--muted); }
+  .hours-table td:first-child { color: var(--forest); font-weight: 600; }
+  .hours-table td:last-child { text-align: right; }
+  .closed-txt { color: var(--rose) !important; font-style: italic; }
+  .today-row td { color: var(--forest) !important; }
+  .today-row td:first-child::after { content: ' ·'; color: var(--gold); }
+
+  .contact-list { margin-top: 28px; display: flex; flex-direction: column; gap: 0; }
+  .citem {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 18px 0; border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .citem:last-child { border-bottom: none; }
+  .cicon {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--forest); display: flex;
+    align-items: center; justify-content: center;
+    font-size: 0.95rem; flex-shrink: 0; margin-top: 2px;
+  }
+  .clabel { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); font-weight: 600; margin-bottom: 4px; }
+  .cval { font-size: 0.9rem; color: var(--ink); font-weight: 300; line-height: 1.55; }
+  .cval a { color: var(--forest); text-decoration: none; font-weight: 500; }
+  .cval a:hover { color: var(--gold); }
+
+  /* ─── MAP EMBED ─── */
+  .map-section { padding: 0; }
+  .map-section iframe { display: block; width: 100%; height: 380px; border: none; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--night); padding: 52px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(196,152,48,0.12);
+  }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem; font-weight: 300;
+    color: var(--light-text); letter-spacing: 0.08em; margin-bottom: 6px;
+  }
+  .footer-sub {
+    font-size: 0.68rem; color: rgba(248,245,238,0.3);
+    letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 36px;
+  }
+  .footer-nav { display: flex; justify-content: center; gap: 36px; list-style: none; margin-bottom: 36px; }
+  .footer-nav a {
+    color: rgba(248,245,238,0.35); text-decoration: none;
+    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+    transition: color 0.25s;
+  }
+  .footer-nav a:hover { color: var(--gold-pale); }
+  .footer-sep {
+    width: 1px; height: 32px; background: rgba(196,152,48,0.25);
+    margin: 0 auto 20px;
+  }
+  .footer-copy { font-size: 0.68rem; color: rgba(248,245,238,0.2); }
+
+  /* ─── REVEAL ANIMATION ─── */
+  .reveal {
+    opacity: 0; transform: translateY(22px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .about-grid, .info-grid, .reviews-grid { grid-template-columns: 1fr; gap: 44px; }
+    .grid-3 { grid-template-columns: 1fr; }
+    section { padding: 72px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-brand">Rosa <em>de India</em></div>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#opiniones">Opiniones</a></li>
+    <li><a href="#contacto">Horario</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+
+  <!-- Botanical rose illustration -->
+  <svg class="hero-rose" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Outer dashed rings -->
+    <circle cx="100" cy="96" r="72" stroke="rgba(196,152,48,0.12)" stroke-width="0.8" stroke-dasharray="2 8"/>
+    <circle cx="100" cy="96" r="55" stroke="rgba(122,174,138,0.14)" stroke-width="0.8" stroke-dasharray="3 6"/>
+    <!-- Main stem -->
+    <path d="M100 192 C100 192 100 145 100 110" stroke="#5A9470" stroke-width="1.4" stroke-linecap="round"/>
+    <!-- Thorns on stem -->
+    <path d="M100 170 Q88 162 84 154" stroke="#5A9470" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+    <path d="M100 155 Q112 147 116 139" stroke="#5A9470" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+    <!-- Left leaf -->
+    <path d="M100 148 Q72 136 64 118 Q79 124 95 142Z" fill="rgba(90,148,112,0.2)" stroke="#5A9470" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M100 148 Q72 136 64 118" stroke="#5A9470" stroke-width="0.7" stroke-dasharray="2 3" fill="none"/>
+    <!-- Right leaf -->
+    <path d="M100 132 Q130 120 138 102 Q123 108 104 128Z" fill="rgba(90,148,112,0.2)" stroke="#5A9470" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M100 132 Q130 120 138 102" stroke="#5A9470" stroke-width="0.7" stroke-dasharray="2 3" fill="none"/>
+    <!-- Sepals -->
+    <path d="M100 110 Q92 104 88 96" stroke="#6DAB87" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+    <path d="M100 110 Q108 104 112 96" stroke="#6DAB87" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+    <path d="M100 110 Q95 103 94 94" stroke="#6DAB87" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+    <path d="M100 110 Q105 103 106 94" stroke="#6DAB87" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+    <!-- Outer petals ring 1 -->
+    <path d="M100 102 Q82 88 78 68 Q94 80 100 102Z" fill="rgba(184,105,122,0.18)" stroke="#B8697A" stroke-width="1.1" stroke-linejoin="round"/>
+    <path d="M100 102 Q118 88 122 68 Q106 80 100 102Z" fill="rgba(184,105,122,0.18)" stroke="#B8697A" stroke-width="1.1" stroke-linejoin="round"/>
+    <path d="M100 102 Q78 96 64 80 Q80 85 100 102Z" fill="rgba(184,105,122,0.15)" stroke="#B8697A" stroke-width="1.1" stroke-linejoin="round"/>
+    <path d="M100 102 Q122 96 136 80 Q120 85 100 102Z" fill="rgba(184,105,122,0.15)" stroke="#B8697A" stroke-width="1.1" stroke-linejoin="round"/>
+    <path d="M100 102 Q86 118 84 132 Q96 112 100 102Z" fill="rgba(184,105,122,0.12)" stroke="#B8697A" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M100 102 Q114 118 116 132 Q104 112 100 102Z" fill="rgba(184,105,122,0.12)" stroke="#B8697A" stroke-width="1" stroke-linejoin="round"/>
+    <!-- Inner petals ring 2 -->
+    <path d="M100 96 Q88 82 86 66 Q97 78 100 96Z" fill="rgba(196,152,48,0.15)" stroke="#C49830" stroke-width="0.9" stroke-linejoin="round"/>
+    <path d="M100 96 Q112 82 114 66 Q103 78 100 96Z" fill="rgba(196,152,48,0.15)" stroke="#C49830" stroke-width="0.9" stroke-linejoin="round"/>
+    <path d="M100 96 Q84 94 76 106 Q90 96 100 96Z" fill="rgba(196,152,48,0.13)" stroke="#C49830" stroke-width="0.9" stroke-linejoin="round"/>
+    <path d="M100 96 Q116 94 124 106 Q110 96 100 96Z" fill="rgba(196,152,48,0.13)" stroke="#C49830" stroke-width="0.9" stroke-linejoin="round"/>
+    <!-- Center rosette -->
+    <circle cx="100" cy="88" r="11" fill="rgba(196,152,48,0.12)" stroke="#C49830" stroke-width="0.9"/>
+    <circle cx="100" cy="88" r="6.5" fill="rgba(184,105,122,0.2)" stroke="#B8697A" stroke-width="0.8"/>
+    <circle cx="100" cy="88" r="3" fill="rgba(196,152,48,0.4)"/>
+    <!-- Stamens (small dots) -->
+    <circle cx="96" cy="84" r="1.2" fill="#C49830" opacity="0.7"/>
+    <circle cx="104" cy="84" r="1.2" fill="#C49830" opacity="0.7"/>
+    <circle cx="100" cy="82" r="1.2" fill="#C49830" opacity="0.7"/>
+    <circle cx="96" cy="92" r="1.2" fill="#C49830" opacity="0.7"/>
+    <circle cx="104" cy="92" r="1.2" fill="#C49830" opacity="0.7"/>
+    <!-- Small decorative dots in corners -->
+    <circle cx="68" cy="70" r="1.8" fill="#5A9470" opacity="0.4"/>
+    <circle cx="132" cy="70" r="1.8" fill="#5A9470" opacity="0.4"/>
+    <circle cx="58" cy="94" r="1.4" fill="#5A9470" opacity="0.3"/>
+    <circle cx="142" cy="94" r="1.4" fill="#5A9470" opacity="0.3"/>
+    <circle cx="80" cy="56" r="1.2" fill="#B8697A" opacity="0.35"/>
+    <circle cx="120" cy="56" r="1.2" fill="#B8697A" opacity="0.35"/>
+  </svg>
+
+  <p class="hero-eyebrow">Herbolario Natural · Villanueva de la Cañada, Madrid</p>
+  <h1>Rosa <em>de India</em></h1>
+  <p class="hero-tagline">Donde la naturaleza cuida de ti</p>
+  <a href="#productos" class="btn-outline">Descubre lo que ofrecemos</a>
+
+  <div class="hero-arrow">
+    <div class="arrow-stem"></div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<div class="pull-quote">
+  <blockquote>
+    "El mejor herbolario de la zona. Su conocimiento hace de cada visita una experiencia muy enriquecedora."
+  </blockquote>
+  <cite>— Clienta habitual, Villanueva de la Cañada</cite>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="nosotros">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p class="eyebrow">Nuestra historia</p>
+        <h2 class="section-h">Un rincón de salud en el <em>corazón</em> del pueblo</h2>
+        <p>Rosa de India nació del amor profundo por lo natural y el deseo de ofrecer a los vecinos de Villanueva de la Cañada <strong>productos de calidad que cuiden cuerpo y mente</strong>. Más que una tienda, somos un espacio de consulta y confianza.</p>
+        <p>Con <strong>Ana</strong> al frente, cada visita se convierte en una experiencia única: te escucha, te orienta y te ayuda a encontrar exactamente lo que necesitas. Su profundo conocimiento convierte cada consulta en un aprendizaje. No sales solo con un producto; sales con respuestas.</p>
+        <p>Trabajamos con proveedores comprometidos con la calidad, como <strong>León el Panadero</strong>, de quien recibimos pan sin gluten artesano cada miércoles. Un privilegio que llevamos con orgullo a nuestra comunidad.</p>
+      </div>
+      <div class="stats reveal">
+        <div class="stat">
+          <div class="stat-n">4.6 <span style="font-size:1.4rem">★</span></div>
+          <div class="stat-l">Valoración media en Google — 34 reseñas verificadas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">+500</div>
+          <div class="stat-l">Productos naturales, ecológicos y sin gluten</div>
+        </div>
+        <div class="stat" style="border-color: var(--rose);">
+          <div class="stat-n" style="color: var(--rose);">Ana</div>
+          <div class="stat-l">Asesoramiento personalizado y cercano en cada visita</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER -->
+<div class="banner">
+  <p class="banner-main">Los miércoles llega pan sin gluten fresco de León el Panadero</p>
+  <p class="banner-sub">Elaborado con pseudocereales de alta calidad · Pídelo con antelación</p>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products" id="productos">
+  <div class="wrap">
+    <div class="products-head reveal">
+      <p class="eyebrow">Lo que encontrarás</p>
+      <h2 class="section-h">Todo lo natural en <em>un solo lugar</em></h2>
+    </div>
+    <div class="grid-3">
+      <div class="pcard reveal">
+        <span class="pcard-icon">🌿</span>
+        <h3 class="pcard-title">Plantas medicinales</h3>
+        <p class="pcard-body">Hierbas, infusiones y remedios naturales seleccionados con rigor. Para cada necesidad, la planta adecuada con el consejo experto de Ana.</p>
+      </div>
+      <div class="pcard reveal">
+        <span class="pcard-icon">🌾</span>
+        <h3 class="pcard-title">Sin gluten</h3>
+        <p class="pcard-body">Una amplia selección para celíacos e intolerantes. Los miércoles, pan fresco artesano de León el Panadero, disponible por encargo.</p>
+      </div>
+      <div class="pcard reveal">
+        <span class="pcard-icon">🥗</span>
+        <h3 class="pcard-title">Productos ecológicos</h3>
+        <p class="pcard-body">Alimentos frescos y envasados de agricultura ecológica: verduras, pastas, conservas y mucho más con garantía de origen natural.</p>
+      </div>
+      <div class="pcard reveal">
+        <span class="pcard-icon">💊</span>
+        <h3 class="pcard-title">Suplementos naturales</h3>
+        <p class="pcard-body">Vitaminas, minerales y complementos de origen natural para reforzar tu bienestar en cada etapa de la vida.</p>
+      </div>
+      <div class="pcard reveal">
+        <span class="pcard-icon">🧴</span>
+        <h3 class="pcard-title">Cosmética natural</h3>
+        <p class="pcard-body">Cremas, jabones y productos de cuidado personal elaborados con ingredientes botánicos, sin aditivos agresivos ni contaminantes.</p>
+      </div>
+      <div class="pcard reveal">
+        <span class="pcard-icon">🫶</span>
+        <h3 class="pcard-title">Asesoramiento personal</h3>
+        <p class="pcard-body">En Rosa de India no vienes solo a comprar. Ana te escucha, te orienta y te ayuda a construir hábitos más saludables y naturales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="opiniones">
+  <div class="wrap">
+    <p class="eyebrow">Opiniones de clientes</p>
+    <h2 class="section-h">Lo que dice <em>nuestra comunidad</em></h2>
+    <div class="reviews-grid">
+      <div class="rcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="rtext">"El mejor herbolario de la zona. Ana es encantadora, y su conocimiento hace de la visita una experiencia muy enriquecedora y completa. Aprendes algo maravilloso en cada visita."</p>
+        <span class="rauthor">Clienta habitual</span>
+      </div>
+      <div class="rcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="rtext">"Gran variedad de productos ecológicos y naturales. Un servicio excelente y muy personalizado. Como Health Coach, me alegra y agradezco tener un herbolario así tan cerca."</p>
+        <span class="rauthor">Health Coach certificada</span>
+      </div>
+      <div class="rcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="rtext">"Tienen productos frescos, opciones sin gluten, medicamentos naturales, pastas... todo de buena calidad. Y Ana siempre dispuesta a resolver cualquier duda con una sonrisa."</p>
+        <span class="rauthor">Cliente de la zona</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORARIO + CONTACTO -->
+<section class="info" id="contacto">
+  <div class="wrap">
+    <div class="info-grid">
+      <div class="reveal">
+        <p class="eyebrow">Horario de apertura</p>
+        <h2 class="section-h">Cuándo <em>visitarnos</em></h2>
+        <table class="hours-table">
+          <tr><td>Lunes</td><td>10:00 – 14:00 &nbsp;/&nbsp; 17:00 – 20:00</td></tr>
+          <tr><td>Martes</td><td>10:00 – 14:00 &nbsp;/&nbsp; 17:00 – 20:00</td></tr>
+          <tr><td>Miércoles</td><td>10:00 – 14:00 &nbsp;/&nbsp; 17:00 – 20:00</td></tr>
+          <tr><td>Jueves</td><td>10:00 – 14:00 &nbsp;/&nbsp; 17:00 – 20:00</td></tr>
+          <tr><td>Viernes</td><td>10:00 – 14:00 &nbsp;/&nbsp; 17:00 – 20:00</td></tr>
+          <tr><td>Sábado</td><td>10:30 – 14:00</td></tr>
+          <tr><td>Domingo</td><td class="closed-txt">Cerrado</td></tr>
+        </table>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Cómo encontrarnos</p>
+        <h2 class="section-h">Ven a <em>vernos</em></h2>
+        <div class="contact-list">
+          <div class="citem">
+            <div class="cicon">📍</div>
+            <div>
+              <div class="clabel">Dirección</div>
+              <div class="cval">C. Empedrada, 8<br>28691 Villanueva de la Cañada, Madrid</div>
+            </div>
+          </div>
+          <div class="citem">
+            <div class="cicon">📞</div>
+            <div>
+              <div class="clabel">Teléfono</div>
+              <div class="cval"><a href="tel:+34609014102">+34 609 01 41 02</a></div>
+            </div>
+          </div>
+          <div class="citem">
+            <div class="cicon">🗺️</div>
+            <div>
+              <div class="clabel">Cómo llegar</div>
+              <div class="cval">
+                <a href="https://maps.google.com/?q=Rosa+De+India+SL,+C.+Empedrada,+8,+28691+Villanueva+de+la+Ca%C3%B1ada,+Madrid" target="_blank" rel="noopener">
+                  Ver en Google Maps →
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="citem">
+            <div class="cicon">⭐</div>
+            <div>
+              <div class="clabel">Valoración Google</div>
+              <div class="cval">4.6 estrellas · 34 reseñas verificadas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<div class="map-section">
+  <iframe
+    title="Ubicación de Rosa de India en Villanueva de la Cañada"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.8!2d-4.0060742!3d40.4480387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4199740f9405c9%3A0x37781380dffab066!2sRosa%20De%20India%20SL!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+    width="100%" height="380" style="border:0" allowfullscreen=""
+    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Rosa de India</div>
+  <div class="footer-sub">Herbolario Natural · Villanueva de la Cañada, Madrid</div>
+  <ul class="footer-nav">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#opiniones">Opiniones</a></li>
+    <li><a href="#contacto">Horario</a></li>
+  </ul>
+  <div class="footer-sep"></div>
+  <p class="footer-copy">© 2025 Rosa de India SL · C. Empedrada, 8 · 28691 Villanueva de la Cañada · +34 609 01 41 02</p>
+</footer>
+
+<script>
+  // Nav solid on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('solid', window.scrollY > 60);
+  });
+
+  // Highlight today's row
+  const days = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+  const todayName = days[new Date().getDay()];
+  document.querySelectorAll('.hours-table tr').forEach(tr => {
+    if (tr.cells[0] && tr.cells[0].textContent.trim() === todayName) {
+      tr.classList.add('today-row');
+    }
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 3) * 0.08 + 's';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
