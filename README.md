@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -24,7 +24,7 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior: smooth; }
   body { font-family:'Jost',sans-serif; background:var(--white); color:var(--ink); overflow-x:hidden; }
- 
+
   /* ─── NAV ─── */
   nav {
     position:fixed; top:0; width:100%; z-index:200;
@@ -39,7 +39,7 @@
   .nav-links { display:flex; gap:40px; list-style:none; }
   .nav-links a { color:rgba(248,245,238,0.6); text-decoration:none; font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:500; transition:color 0.25s; }
   .nav-links a:hover { color:var(--gold-pale); }
- 
+
   /* ─── HERO ─── */
   .hero {
     min-height:100vh; background:var(--night);
@@ -52,13 +52,13 @@
   .hero-eyebrow { font-size:0.68rem; letter-spacing:0.32em; text-transform:uppercase; color:var(--gold); margin-bottom:18px; font-weight:600; position:relative; z-index:1; }
   .hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(4rem,10vw,7.5rem); font-weight:300; line-height:0.92; color:var(--light-text); letter-spacing:-0.01em; margin-bottom:6px; position:relative; z-index:1; }
   .hero h1 em { font-style:italic; color:var(--rose-pale); }
-  .hero-tagline { font-family:'Cormorant Garamond',serif; font-size:clamp(1.1rem,2.5vw,1.55rem); font-style:italic; font-weight:300; color:rgba(248,245,238,0.45); margin-bottom:52px; letter-spacing:0.04em; position:relative; z-index:1; }
+  .hero-tagline { font-family:'Cormorant Garamond',serif; font-size:clamp(1.1rem,2.5vw,1.55rem); font-style:italic; font-weight:300; color:rgba(248,245,238,0.45); margin-bottom:52px; letter-spacing:0.02em; position:relative; z-index:1; }
   .btn-outline { display:inline-block; padding:13px 38px; border:1px solid rgba(196,152,48,0.55); color:var(--gold-pale); text-decoration:none; font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; transition:all 0.3s; position:relative; z-index:1; }
   .btn-outline:hover { background:var(--gold); color:var(--night); border-color:var(--gold); }
   .hero-arrow { position:absolute; bottom:36px; left:50%; transform:translateX(-50%); z-index:1; display:flex; flex-direction:column; align-items:center; gap:8px; }
   .arrow-stem { width:1px; height:44px; background:linear-gradient(to bottom,rgba(196,152,48,0.6),transparent); animation:pulse 2.2s ease-in-out infinite; }
   @keyframes pulse { 0%,100%{opacity:0.3;} 50%{opacity:1;} }
- 
+
   /* ─── VIDEO SECTION ─── */
   .video-section { position:relative; width:100%; height:70vh; overflow:hidden; background:var(--night); }
   .video-section video { width:100%; height:100%; object-fit:cover; display:block; }
@@ -83,19 +83,19 @@
   }
   @keyframes gradientShift { 0%{background-position:0% 50%;} 50%{background-position:100% 50%;} 100%{background-position:0% 50%;} }
   .video-placeholder svg { opacity:0.12; width:220px; height:220px; }
- 
+
   /* ─── PULL QUOTE ─── */
   .pull-quote { background:var(--forest); padding:52px 24px; text-align:center; }
-  .pull-quote blockquote { font-family:'Cormorant Garamond',serif; font-size:clamp(1.25rem,3vw,1.9rem); font-weight:300; font-style:italic; color:var(--light-text); max-width:640px; margin:0 auto; line-height:1.55; }
+  .pull-quote blockquote { font-family:'Cormorant Garamond',serif; font-size:clamp(1.25rem,3vw,1.9rem); font-weight:300; font-style:italic; color:var(--light-text); max-width:640px; margin:0 auto; line-height:1.75; }
   .pull-quote cite { display:block; margin-top:18px; font-size:0.68rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-style:normal; font-weight:600; font-family:'Jost',sans-serif; }
- 
+
   /* ─── SECTIONS ─── */
   section { padding:100px 24px; }
   .wrap { max-width:1080px; margin:0 auto; }
   .eyebrow { font-size:0.68rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--sage); font-weight:600; margin-bottom:14px; }
   .section-h { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3.2rem); font-weight:300; line-height:1.1; color:var(--forest); margin-bottom:28px; }
   .section-h em { font-style:italic; }
- 
+
   /* ─── ABOUT ─── */
   .about { background:var(--white); }
   .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
@@ -105,7 +105,7 @@
   .stat { padding:22px 26px; border-left:2px solid var(--gold); background:var(--cream); }
   .stat-n { font-family:'Cormorant Garamond',serif; font-size:2.6rem; font-weight:300; color:var(--forest); line-height:1; }
   .stat-l { font-size:0.76rem; color:var(--muted); letter-spacing:0.04em; margin-top:6px; font-weight:300; }
- 
+
   /* ─── NEWS SECTION ─── */
   .news { background:linear-gradient(135deg,var(--sage) 0%,var(--forest) 100%); }
   .news .eyebrow { color:rgba(248,245,238,0.65); }
@@ -125,7 +125,7 @@
   .news-source { font-size:0.65rem; color:rgba(248,245,238,0.35); letter-spacing:0.1em; margin-top:14px; font-weight:500; }
   .news-source a { color:var(--gold-pale); text-decoration:none; opacity:0.7; transition:opacity 0.2s; }
   .news-source a:hover { opacity:1; }
- 
+
   /* ─── PRODUCT CATEGORIES ─── */
   .products { background:var(--cream); }
   .products-head { text-align:center; max-width:540px; margin:0 auto 52px; }
@@ -165,9 +165,9 @@
   .pcard-icon { font-size:1.7rem; margin-bottom:16px; display:block; }
   .pcard-title { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--forest); margin-bottom:8px; transition:color 0.3s; }
   .pcard-body { font-size:0.8rem; color:var(--muted); line-height:1.65; font-weight:300; transition:color 0.3s; margin-bottom:12px; }
-  .pcard-tag { display:inline-block; padding:3px 10px; background:var(--cream); font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--sage); font-weight:600; transition:all 0.3s; }
+  .pcard-tag { display:inline-block; padding:3px 10px; background:var(--cream); font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--sage); font-weight:600; transition:all 0.25s; }
   .products-empty { display:none; grid-column:1/-1; text-align:center; padding:80px 24px; color:var(--muted); font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-style:italic; }
- 
+
   /* ─── REVIEWS ─── */
   .reviews { background:var(--night); }
   .reviews .eyebrow { color:var(--gold); }
@@ -178,7 +178,7 @@
   .stars { color:var(--gold); font-size:0.78rem; letter-spacing:3px; margin-bottom:16px; }
   .rtext { font-family:'Cormorant Garamond',serif; font-size:1.02rem; font-weight:300; font-style:italic; line-height:1.65; color:rgba(248,245,238,0.82); margin-bottom:20px; }
   .rauthor { font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); font-weight:600; }
- 
+
   /* ─── HORARIO + CONTACTO ─── */
   .info { background:var(--cream); }
   .info-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
@@ -198,11 +198,11 @@
   .cval { font-size:0.9rem; color:var(--ink); font-weight:300; line-height:1.55; }
   .cval a { color:var(--forest); text-decoration:none; font-weight:500; }
   .cval a:hover { color:var(--gold); }
- 
+
   /* ─── MAP ─── */
   .map-section { padding:0; }
   .map-section iframe { display:block; width:100%; height:380px; border:none; }
- 
+
   /* ─── FOOTER ─── */
   footer { background:var(--night); padding:52px 24px; text-align:center; border-top:1px solid rgba(196,152,48,0.12); }
   .footer-brand { font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:300; color:var(--light-text); letter-spacing:0.08em; margin-bottom:6px; }
@@ -212,11 +212,11 @@
   .footer-nav a:hover { color:var(--gold-pale); }
   .footer-sep { width:1px; height:32px; background:rgba(196,152,48,0.25); margin:0 auto 20px; }
   .footer-copy { font-size:0.68rem; color:rgba(248,245,238,0.2); }
- 
+
   /* ─── REVEAL ─── */
   .reveal { opacity:0; transform:translateY(22px); transition:opacity 0.55s ease,transform 0.55s ease; }
   .reveal.in { opacity:1; transform:translateY(0); }
- 
+
   /* ─── RESPONSIVE ─── */
   @media(max-width:900px) {
     .news-grid { grid-template-columns:repeat(2,1fr); }
@@ -233,7 +233,7 @@
 </style>
 </head>
 <body>
- 
+
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-brand">Rosa <em>de India</em></div>
@@ -245,7 +245,7 @@
     <li><a href="#contacto">Horario</a></li>
   </ul>
 </nav>
- 
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-glow"></div>
@@ -286,7 +286,7 @@
   <a href="#productos" class="btn-outline">Descubre lo que ofrecemos</a>
   <div class="hero-arrow"><div class="arrow-stem"></div></div>
 </section>
- 
+
 <!-- VIDEO SECTION -->
 <div class="video-section" id="video-section">
   <!-- Placeholder animado mientras se genera/carga el vídeo -->
@@ -311,405 +311,12 @@
   <div class="video-overlay"></div>
   <div class="video-label">Naturaleza · Bienestar · Salud</div>
 </div>
- 
+
 <!-- PULL QUOTE -->
 <div class="pull-quote">
   <blockquote>"El mejor herbolario de la zona. Su conocimiento hace de cada visita una experiencia muy enriquecedora."</blockquote>
   <cite>— Clienta habitual, Villanueva de la Cañada</cite>
 </div>
- 
-<!-- ABOUT -->
-<section class="about" id="nosotros">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="about-body reveal">
-        <p class="eyebrow">Nuestra historia</p>
-        <h2 class="section-h">Un rincón de salud en el <em>corazón</em> del pueblo</h2>
-        <p>Rosa de India nació del amor profundo por lo natural y el deseo de ofrecer a los vecinos de Villanueva de la Cañada <strong>productos de calidad que cuiden cuerpo y mente</strong>. Más que una tienda, somos un espacio de consulta y confianza.</p>
-        <p>Con <strong>Ana</strong> al frente, cada visita se convierte en una experiencia única: te escucha, te orienta y te ayuda a encontrar exactamente lo que necesitas. Su profundo conocimiento convierte cada consulta en un aprendizaje real.</p>
-        <p>Apostamos por la <strong>prevención natural</strong>, la alimentación ecológica y el bienestar integral. Aquí no vienes solo a comprar; sales con respuestas y con la tranquilidad de haber elegido lo mejor para ti.</p>
-      </div>
-      <div class="stats reveal">
-        <div class="stat">
-          <div class="stat-n">4.6 <span style="font-size:1.4rem">★</span></div>
-          <div class="stat-l">Valoración media en Google — 34 reseñas verificadas</div>
-        </div>
-        <div class="stat">
-          <div class="stat-n">+500</div>
-          <div class="stat-l">Productos naturales, ecológicos y sin gluten</div>
-        </div>
-        <div class="stat" style="border-color:var(--rose);">
-          <div class="stat-n" style="color:var(--rose);">Ana</div>
-          <div class="stat-l">Asesoramiento personalizado y cercano en cada visita</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
- 
-<!-- NOTICIAS -->
-<section class="news" id="noticias">
-  <div class="wrap">
-    <p class="eyebrow">Actualidad</p>
-    <h2 class="section-h" style="color:var(--light-text);">Lo último en salud <em>natural</em></h2>
-    <div class="news-grid">
- 
-      <div class="news-card reveal">
-        <div class="news-date">Junio 2025</div>
-        <h3 class="news-title">Nuevo auge de las plantas medicinales</h3>
-        <p class="news-body">Las plantas medicinales viven un resurgimiento impulsado por la recuperación de saberes ancestrales y el avance de la investigación científica, combinando tradición con innovación tecnológica.</p>
-        <div class="news-source"><a href="https://www.jardineriaon.com/avances-y-tendencias-actuales-en-el-uso-y-desarrollo-de-plantas-medicinales.html" target="_blank" rel="noopener">Jardineriaon.com →</a></div>
-      </div>
- 
-      <div class="news-card reveal">
-        <div class="news-date">Febrero 2026</div>
-        <h3 class="news-title">Europa lidera el crecimiento herbal</h3>
-        <p class="news-body">El mercado europeo de productos medicinales a base de plantas registra un crecimiento anual del 10,5%, impulsado por la creciente demanda de tratamientos naturales y preventivos entre los consumidores.</p>
-        <div class="news-source"><a href="https://www.mordorintelligence.ar/industry-reports/herbal-medicinal-products-market" target="_blank" rel="noopener">Mordor Intelligence →</a></div>
-      </div>
- 
-      <div class="news-card reveal">
-        <div class="news-date">Marzo 2026</div>
-        <h3 class="news-title">Innovación y sostenibilidad en herboristería</h3>
-        <p class="news-body">Más de la mitad de los fabricantes de productos herbarios invierten ya en I+D para desarrollar formulaciones innovadoras y técnicas de extracción sostenibles con menor impacto ambiental.</p>
-        <div class="news-source"><a href="https://www.businessresearchinsights.com/es/market-reports/herbal-supplements-market-120928" target="_blank" rel="noopener">Business Research Insights →</a></div>
-      </div>
- 
-      <div class="news-card reveal">
-        <div class="news-date">Junio 2025</div>
-        <h3 class="news-title">Medicina integradora: ciencia y naturaleza</h3>
-        <p class="news-body">Los centros médicos incorporan cada vez más suplementos herbales para el apoyo inmunológico y el manejo del estrés, reconociendo el valor de unir la medicina occidental con los remedios de origen vegetal.</p>
-        <div class="news-source"><a href="https://www.businessresearchinsights.com/es/market-reports/herbal-supplements-market-120928" target="_blank" rel="noopener">Business Research Insights →</a></div>
-      </div>
- 
-    </div>
-  </div>
-</section>
- 
-<!-- PRODUCTOS POR CATEGORÍA -->
-<section class="products" id="productos">
-  <div class="wrap">
-    <div class="products-head reveal">
-      <p class="eyebrow">Nuestro catálogo</p>
-      <h2 class="section-h">Explora por <em>categoría</em></h2>
-    </div>
- 
-    <!-- Pestañas de categoría -->
-    <div class="cat-tabs" role="tablist" aria-label="Categorías de productos">
-      <button class="cat-tab active" data-cat="plantas" role="tab" aria-selected="true">
-        <span class="tab-icon">🌿</span>Plantas & Infusiones
-      </button>
-      <button class="cat-tab" data-cat="ecologico" role="tab" aria-selected="false">
-        <span class="tab-icon">🥗</span>Alimentación Ecológica
-      </button>
-      <button class="cat-tab" data-cat="singluten" role="tab" aria-selected="false">
-        <span class="tab-icon">🌾</span>Sin Gluten
-      </button>
-      <button class="cat-tab" data-cat="suplementos" role="tab" aria-selected="false">
-        <span class="tab-icon">💊</span>Suplementos
-      </button>
-      <button class="cat-tab" data-cat="cosmetica" role="tab" aria-selected="false">
-        <span class="tab-icon">🧴</span>Cosmética Natural
-      </button>
-      <button class="cat-tab" data-cat="aromas" role="tab" aria-selected="false">
-        <span class="tab-icon">🫙</span>Aceites & Aromas
-      </button>
-    </div>
- 
-    <!-- Grid de productos -->
-    <div class="products-grid" id="products-grid">
- 
-      <!-- PLANTAS & INFUSIONES -->
-      <div class="pcard visible" data-cat="plantas">
-        <span class="pcard-icon">🌼</span>
-        <h3 class="pcard-title">Infusiones digestivas</h3>
-        <p class="pcard-body">Manzanilla, hinojo, menta piperita y otras plantas para el bienestar digestivo. Próximamente más información.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
-      <div class="pcard visible" data-cat="plantas">
-        <span class="pcard-icon">🫖</span>
-        <h3 class="pcard-title">Tés y mezclas</h3>
-        <p class="pcard-body">Mezclas artesanales para la relajación, la energía y el sueño profundo. Curación natural en cada taza.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
-      <div class="pcard visible" data-cat="plantas">
-        <span class="pcard-icon">🌱</span>
-        <h3 class="pcard-title">Plantas a granel</h3>
-        <p class="pcard-body">Hierbas medicinales seleccionadas a granel para preparar tus propios remedios con la orientación de Ana.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
- 
-      <!-- ALIMENTACIÓN ECOLÓGICA -->
-      <div class="pcard" data-cat="ecologico">
-        <span class="pcard-icon">🫘</span>
-        <h3 class="pcard-title">Legumbres ecológicas</h3>
-        <p class="pcard-body">Garbanzos, lentejas y alubias de cultivo ecológico certificado. Nutrición real y sostenible.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
-      <div class="pcard" data-cat="ecologico">
-        <span class="pcard-icon">🫒</span>
-        <h3 class="pcard-title">Aceites y condimentos</h3>
-        <p class="pcard-body">Aceites vírgenes, vinagres y especias de origen ecológico para una cocina saludable y sabrosa.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
-      <div class="pcard" data-cat="ecologico">
-        <span class="pcard-icon">🌾</span>
-        <h3 class="pcard-title">Cereales y pseudocereales</h3>
-        <p class="pcard-body">Quinoa, amaranto, espelta y otros granos integrales de agricultura ecológica para tu día a día.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
- 
-      <!-- SIN GLUTEN -->
-      <div class="pcard" data-cat="singluten">
-        <span class="pcard-icon">🍞</span>
-        <h3 class="pcard-title">Pan sin gluten (Miércoles)</h3>
-        <p class="pcard-body">Recibimos pan artesano sin gluten fresco cada miércoles. Elaborado con pseudocereales de alta calidad. Disponible por encargo.</p>
-        <span class="pcard-tag">Encargo previo</span>
-      </div>
-      <div class="pcard" data-cat="singluten">
-        <span class="pcard-icon">🍝</span>
-        <h3 class="pcard-title">Pastas sin gluten</h3>
-        <p class="pcard-body">Pasta de arroz, maíz y otras variedades sin gluten para una dieta variada sin renunciar al sabor.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
-      <div class="pcard" data-cat="singluten">
-        <span class="pcard-icon">🥣</span>
-        <h3 class="pcard-title">Cereales y galletas sin gluten</h3>
-        <p class="pcard-body">Desayunos y snacks pensados para celíacos e intolerantes, con ingredientes naturales y sin aditivos.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
- 
-      <!-- SUPLEMENTOS -->
-      <div class="pcard" data-cat="suplementos">
-        <span class="pcard-icon">✨</span>
-        <h3 class="pcard-title">Vitaminas y minerales</h3>
-        <p class="pcard-body">Complementos vitamínicos de origen natural para reforzar tus defensas y mantener la vitalidad a diario.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
-      <div class="pcard" data-cat="suplementos">
-        <span class="pcard-icon">🌊</span>
-        <h3 class="pcard-title">Omega 3 y Ácidos grasos</h3>
-        <p class="pcard-body">Aceite de krill, lino y otros ácidos grasos esenciales para el corazón, el cerebro y la piel.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
-      <div class="pcard" data-cat="suplementos">
-        <span class="pcard-icon">🍄</span>
-        <h3 class="pcard-title">Adaptógenos</h3>
-        <p class="pcard-body">Ashwagandha, rhodiola y extractos de hongos medicinales para equilibrar el estrés y mejorar el rendimiento.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
- 
-      <!-- COSMÉTICA -->
-      <div class="pcard" data-cat="cosmetica">
-        <span class="pcard-icon">🌸</span>
-        <h3 class="pcard-title">Cremas y sérums naturales</h3>
-        <p class="pcard-body">Formulaciones con ingredientes botánicos y sin químicos agresivos para cuidar tu piel de manera consciente.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
-      <div class="pcard" data-cat="cosmetica">
-        <span class="pcard-icon">🧼</span>
-        <h3 class="pcard-title">Jabones artesanales</h3>
-        <p class="pcard-body">Jabones de glicerina, de aceite de oliva y hierbas, elaborados con métodos tradicionales y sin parabenos.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
-      <div class="pcard" data-cat="cosmetica">
-        <span class="pcard-icon">💆</span>
-        <h3 class="pcard-title">Cuidado capilar natural</h3>
-        <p class="pcard-body">Champús, mascarillas y tratamientos para el cabello formulados con extractos de plantas y aceites vegetales.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
- 
-      <!-- ACEITES & AROMAS -->
-      <div class="pcard" data-cat="aromas">
-        <span class="pcard-icon">🕯️</span>
-        <h3 class="pcard-title">Aceites esenciales</h3>
-        <p class="pcard-body">Lavanda, árbol de té, eucalipto y más de 40 aceites esenciales puros para aromaterapia y cuidado personal.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
-      <div class="pcard" data-cat="aromas">
-        <span class="pcard-icon">🌬️</span>
-        <h3 class="pcard-title">Difusores y accesorios</h3>
-        <p class="pcard-body">Difusores de ultrasónica, velas de soja y materiales para crear tu propio espacio de bienestar en casa.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
-      <div class="pcard" data-cat="aromas">
-        <span class="pcard-icon">🫧</span>
-        <h3 class="pcard-title">Aguas florales y hidrolatos</h3>
-        <p class="pcard-body">Aguas de rosas, lavanda y manzanilla para el cuidado facial, la aromatización del hogar y el bienestar emocional.</p>
-        <span class="pcard-tag">Próximamente</span>
-      </div>
- 
-    </div>
-    <!-- Mensaje de contacto -->
-    <p style="text-align:center;margin-top:36px;font-size:0.82rem;color:var(--muted);font-weight:300;">
-      ¿No encuentras lo que buscas? <a href="tel:+34609014102" style="color:var(--forest);font-weight:600;">Llámanos</a> y Ana te ayudará personalmente.
-    </p>
-  </div>
-</section>
- 
-<!-- REVIEWS -->
-<section class="reviews" id="opiniones">
-  <div class="wrap">
-    <p class="eyebrow">Opiniones de clientes</p>
-    <h2 class="section-h">Lo que dice <em>nuestra comunidad</em></h2>
-    <div class="reviews-grid">
-      <div class="rcard reveal">
-        <div class="stars">★★★★★</div>
-        <p class="rtext">"El mejor herbolario de la zona. Ana es encantadora, y su conocimiento hace de la visita una experiencia muy enriquecedora y completa. Aprendes algo maravilloso en cada visita."</p>
-        <span class="rauthor">Clienta habitual</span>
-      </div>
-      <div class="rcard reveal">
-        <div class="stars">★★★★★</div>
-        <p class="rtext">"Gran variedad de productos ecológicos y naturales. Un servicio excelente y muy personalizado. Como Health Coach, me alegra tener un herbolario así tan cerca."</p>
-        <span class="rauthor">Health Coach certificada</span>
-      </div>
-      <div class="rcard reveal">
-        <div class="stars">★★★★★</div>
-        <p class="rtext">"Tienen productos frescos, opciones sin gluten, medicamentos naturales, pastas... todo de buena calidad. Y Ana siempre dispuesta a resolver cualquier duda con una sonrisa."</p>
-        <span class="rauthor">Cliente de la zona</span>
-      </div>
-    </div>
-  </div>
-</section>
- 
-<!-- HORARIO + CONTACTO -->
-<section class="info" id="contacto">
-  <div class="wrap">
-    <div class="info-grid">
-      <div class="reveal">
-        <p class="eyebrow">Horario de apertura</p>
-        <h2 class="section-h">Cuándo <em>visitarnos</em></h2>
-        <table class="hours-table">
-          <tr><td>Lunes</td><td>10:00 – 14:00 &nbsp;/&nbsp; 17:00 – 20:00</td></tr>
-          <tr><td>Martes</td><td>10:00 – 14:00 &nbsp;/&nbsp; 17:00 – 20:00</td></tr>
-          <tr><td>Miércoles</td><td>10:00 – 14:00 &nbsp;/&nbsp; 17:00 – 20:00</td></tr>
-          <tr><td>Jueves</td><td>10:00 – 14:00 &nbsp;/&nbsp; 17:00 – 20:00</td></tr>
-          <tr><td>Viernes</td><td>10:00 – 14:00 &nbsp;/&nbsp; 17:00 – 20:00</td></tr>
-          <tr><td>Sábado</td><td>10:30 – 14:00</td></tr>
-          <tr><td>Domingo</td><td class="closed-txt">Cerrado</td></tr>
-        </table>
-      </div>
-      <div class="reveal">
-        <p class="eyebrow">Cómo encontrarnos</p>
-        <h2 class="section-h">Ven a <em>vernos</em></h2>
-        <div class="contact-list">
-          <div class="citem">
-            <div class="cicon">📍</div>
-            <div>
-              <div class="clabel">Dirección</div>
-              <div class="cval">C. Empedrada, 8<br>28691 Villanueva de la Cañada, Madrid</div>
-            </div>
-          </div>
-          <div class="citem">
-            <div class="cicon">📞</div>
-            <div>
-              <div class="clabel">Teléfono</div>
-              <div class="cval"><a href="tel:+34609014102">+34 609 01 41 02</a></div>
-            </div>
-          </div>
-          <div class="citem">
-            <div class="cicon">🗺️</div>
-            <div>
-              <div class="clabel">Cómo llegar</div>
-              <div class="cval"><a href="https://maps.google.com/?q=Rosa+De+India+SL,+C.+Empedrada,+8,+28691+Villanueva+de+la+Ca%C3%B1ada,+Madrid" target="_blank" rel="noopener">Ver en Google Maps →</a></div>
-            </div>
-          </div>
-          <div class="citem">
-            <div class="cicon">⭐</div>
-            <div>
-              <div class="clabel">Valoración Google</div>
-              <div class="cval">4.6 estrellas · 34 reseñas verificadas</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
- 
-<!-- MAP -->
-<div class="map-section">
-  <iframe title="Ubicación Rosa de India en Villanueva de la Cañada"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.8!2d-4.0060742!3d40.4480387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4199740f9405c9%3A0x37781380dffab066!2sRosa%20De%20India%20SL!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
-    width="100%" height="380" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
- 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">Rosa de India</div>
-  <div class="footer-sub">Herbolario Natural · Villanueva de la Cañada, Madrid</div>
-  <ul class="footer-nav">
-    <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="#noticias">Noticias</a></li>
-    <li><a href="#productos">Productos</a></li>
-    <li><a href="#opiniones">Opiniones</a></li>
-    <li><a href="#contacto">Horario</a></li>
-  </ul>
-  <div class="footer-sep"></div>
-  <p class="footer-copy">© 2025 Rosa de India SL · C. Empedrada, 8 · 28691 Villanueva de la Cañada · +34 609 01 41 02</p>
-</footer>
- 
-<script>
-  // Nav solid on scroll
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 60));
- 
-  // Highlight today's row
-  const days = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
-  const todayName = days[new Date().getDay()];
-  document.querySelectorAll('.hours-table tr').forEach(tr => {
-    if (tr.cells[0] && tr.cells[0].textContent.trim() === todayName) tr.classList.add('today-row');
-  });
- 
-  // ── PRODUCT CATEGORIES ──
-  const tabs = document.querySelectorAll('.cat-tab');
-  const cards = document.querySelectorAll('.pcard');
- 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const cat = tab.dataset.cat;
-      // Update tabs
-      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-      tab.classList.add('active'); tab.setAttribute('aria-selected','true');
-      // Update cards
-      cards.forEach(card => {
-        if (card.dataset.cat === cat) {
-          card.classList.add('visible');
-        } else {
-          card.classList.remove('visible');
-        }
-      });
-    });
-  });
- 
-  // ── VIDEO LOADER ──
-  // Cuando el vídeo de Prueba esté disponible, pon su URL aquí:
-  const VIDEO_URL = '';  // <- URL del vídeo generado por Prueba (se actualizará)
- 
-  function loadVideo(url) {
-    if (!url) return;
-    const vid = document.getElementById('nature-video');
-    const src = document.getElementById('video-src');
-    const placeholder = document.getElementById('video-placeholder');
-    src.src = url;
-    vid.style.display = 'block';
-    vid.load();
-    vid.addEventListener('canplay', () => {
-      vid.style.opacity = '0';
-      vid.style.transition = 'opacity 1.2s ease';
-      vid.play().catch(() => {});
-      setTimeout(() => { vid.style.opacity = '1'; if(placeholder) placeholder.style.opacity = '0'; }, 100);
-    });
-  }
- 
-  if (VIDEO_URL) loadVideo(VIDEO_URL);
- 
-  // ── SCROLL REVEAL ──
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 0.08 + 's'; observer.observe(el); });
-</script>
+
 </body>
 </html>
